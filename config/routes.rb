@@ -1,5 +1,15 @@
 APItite::Application.routes.draw do
-  get "home/index"
+  get "apis/new"
+
+  get "apis/create"
+
+  get "apis/show"
+
+  get "apis/delete"
+
+  root to: "home#index"
+
+  resources :apis
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,17 @@
+%h1 Home
+- if @apis and @apis.count > 0
+	%table.table.table-condensed.table-striped
+		%thead
+			%tr
+				%th	Name
+				%th Path
+				%th Docs
+		%tbody
+			- @apis.each do |api|
+				%tr
+					%td api.name
+					%td api.path
+					%td api.docs
+- else
+	%h3{:style => "text-align: center;"} No APIs
+
