@@ -1,0 +1,21 @@
+- if @apis and @apis.count > 0
+  %table.table.table-condensed.table-striped
+    %thead
+      %tr
+        %th Name
+        %th Path
+        %th Docs
+        %th Created
+    %tbody
+      - @apis.each do |a|
+        %tr
+          %td 
+            = a.name
+          %td 
+            = a.path
+          %td 
+            = a.docs
+          %td 
+            = a.created_at
+- else
+  %h3{:style => "text-align: center;"} No APIs

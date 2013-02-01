@@ -1,15 +1,4 @@
 APItite::Application.routes.draw do
-  get "apis/new"
-
-  get "apis/create"
-
-  get "apis/show"
-
-  get "apis/delete"
-
-  root to: "home#index"
-
-  resources :apis
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -67,4 +56,20 @@ APItite::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
+  #== Route Map
+  # Generated on 01 Feb 2013 10:42
+  #
+  #     apis GET    /apis(.:format)          apis#index
+  #          POST   /apis(.:format)          apis#create
+  #  new_api GET    /apis/new(.:format)      apis#new
+  # edit_api GET    /apis/:id/edit(.:format) apis#edit
+  #      api GET    /apis/:id(.:format)      apis#show
+  #          PUT    /apis/:id(.:format)      apis#update
+  #          DELETE /apis/:id(.:format)      apis#destroy
+
+  root to: "home#index"
+
+  resources :apis
 end
+

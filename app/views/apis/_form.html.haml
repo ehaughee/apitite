@@ -1,0 +1,20 @@
+= form_for @api, html: { class: "form-horizontal" } do |a|
+  .control-group
+    %label.control-label{ for: "name" } Name
+    .controls
+      = a.text_field :name, placeholder: "Name"
+      / %input#name{ name: "name", placeholder: "Name", type: "text" }
+  .control-group
+    %label.control-label{ for: "path" } Path
+    .controls
+      = a.text_field :path, placeholder: "http//api.pathtoapi.com/method/"
+      / %input#path{ name: "path", placeholder: "http//api.pathtoapi.com/method/", type: "text", }
+  .control-group
+    %label.control-label{ for: "Docs" } Documentation URL
+    .controls
+      = a.text_field :docs, placeholder: "http//docs.pathtoapi.com/"
+      / %input#Docs{ name: "docs", placeholder: "http//docs.pathtoapi.com/", type: "text" }
+  .control-group
+    .controls
+      = a.submit ((params[:action] == "show") ? "Update " : "Create ") + "API", class: "btn btn-primary"
+      / %button.btn{ type: "submit", class: "btn-primary" } Submit

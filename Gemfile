@@ -2,12 +2,14 @@ source :rubygems
 
 gem 'rails', '3.2.11'
 
-# Bundle edge Rails instead:i
+# Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
 gem "haml-rails"
 gem 'json'
+gem 'strong_parameters'
+gem 'annotate', ">=2.5.0"
 
 # Gems used only for assets and not required
 # in production environments by default.
