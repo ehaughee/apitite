@@ -11,13 +11,21 @@ class ApisController < ApplicationController
     Rails.logger.info "Creating API"
     api = Api.new api_params
     if api.save
-      flash[:notice] = "Successfully created an API!"
+      flash[:notice] = "Successfully created an API"
       flash[:type]   = "alert-success"
       redirect_to api
     else
       flash[:notice] = "Error adding API"
       flash[:type]   = "alert-error"
       render "new"
+    end
+  end
+
+  def edit
+    if params[:id] && @api = Api.find_by_id(params[:id])
+      @api
+    else
+      redirect_to "/404.html"
     end
   end
 
@@ -32,7 +40,7 @@ class ApisController < ApplicationController
         flash[:notice] = "Error updating API"
         flash[:type]   = "alert-error"
       end
-      
+
       redirect_to api
     else
       redirect_to "/404.html"
@@ -49,8 +57,21 @@ class ApisController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     Rails.logger.info "Deleting API"
+    if params[:id] && @api = Api.find_by_id(params[:id])
+      if @api.delete!
+        flash[:notice] = "Successfully deleted API"
+        flash[:type]   = "alert-success"
+        redirect_to "index"
+      else
+        flash[:notice] = "Error deleting API"
+        flash[:type]   = "alert-error"
+        redirect_to @api
+      end
+    else
+      redirect_to "/404.html"
+    end
   end
 
   private

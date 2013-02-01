@@ -6,6 +6,7 @@
         %th Path
         %th Docs
         %th Created
+        %th Actions
     %tbody
       - @apis.each do |a|
         %tr
@@ -17,5 +18,7 @@
             = a.docs
           %td 
             = a.created_at
+          %td
+            = render partial: 'partials/actions', locals: { api: @api }
 - else
   %h3{:style => "text-align: center;"} No APIs

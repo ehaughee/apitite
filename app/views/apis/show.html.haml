@@ -1,2 +1,20 @@
 %h1 #{@api.name}
-= render partial: 'form'
+%table.table 
+  %thead 
+    %th Name
+    %th Path
+    %th Docs
+    %th Created
+    %th Actions
+  %tbody
+    %tr
+      %td 
+        = @api.name
+      %td 
+        = @api.path
+      %td 
+        = @api.docs
+      %td
+        = @api.created_at
+      %td
+        = render :partial => 'partials/actions'
