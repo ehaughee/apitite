@@ -60,10 +60,10 @@ class ApisController < ApplicationController
   def destroy
     Rails.logger.info "Deleting API"
     if params[:id] && @api = Api.find_by_id(params[:id])
-      if @api.delete!
+      if @api.destroy
         flash[:notice] = "Successfully deleted API"
         flash[:type]   = "alert-success"
-        redirect_to "index"
+        redirect_to apis_url
       else
         flash[:notice] = "Error deleting API"
         flash[:type]   = "alert-error"

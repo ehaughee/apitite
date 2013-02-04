@@ -17,4 +17,4 @@
       %td
         = @api.created_at
       %td
-        = render :partial => 'partials/actions'
+        = render :partial => 'partials/actions', locals: { api: @api }

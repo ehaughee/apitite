@@ -7,8 +7,13 @@
     = csrf_meta_tags
   %body
     .container
-      - if flash[:notice]
-        %div{ class: "alert " + flash[:type] }
-          %button.close{"data-dismiss" => "alert", type: "button"} &times;
-          = flash[:notice]
-      = yield
+      %header
+        = render :partial => 'layouts/navbar'
+      %section#content
+        - if flash[:notice]
+          %div{ class: "alert " + flash[:type] }
+            %button.close{"data-dismiss" => "alert", type: "button"} &times;
+            = flash[:notice]
+        = yield
+      %footer
+        / TODO: place footer here

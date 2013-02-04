@@ -1,0 +1,17 @@
+= javascript_include_tag "navbar"
+
+.navbar
+  .navbar-inner
+    %a.brand{href: root_url} APItite
+    %ul.nav
+      %li.active
+        %a{href: root_url} Home
+      %li.dropdown
+        %a.dropdown-toggle{"data-toggle" => "dropdown", href: apis_url}
+          APIs
+          %b.caret
+        %ul.dropdown-menu
+          %li
+            %a{href: apis_url} All APIs
+          %li
+            %a{href: new_api_url} New API
