@@ -11,9 +11,11 @@
       %td 
         = @api.name
       %td 
-        = @api.path
+        %a{href: @api.path}
+          = @api.path
       %td 
-        = @api.docs
+        %a{href: @api.docs}
+          = @api.docs
       %td
         = @api.created_at
       %td

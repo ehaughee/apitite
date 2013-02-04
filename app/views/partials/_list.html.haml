@@ -13,9 +13,11 @@
           %td 
             = a.name
           %td 
-            = a.path
+            %a{href: a.path}
+              = a.path
           %td 
-            = a.docs
+            %a{href: a.docs}
+              = a.docs
           %td 
             = a.created_at
           %td
