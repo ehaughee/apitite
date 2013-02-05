@@ -48,7 +48,7 @@ apis = Api.create([
     docs: "http://docs.DynDNS.com"
   },
   {
-    name: "FuffData1",
+    name: "FluffData1",
     path: "http://api.FuffData1.com",
     docs: "http://docs.FuffData1.com"
   },
