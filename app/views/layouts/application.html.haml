@@ -9,7 +9,7 @@
     .container
       %header
         = render :partial => 'layouts/navbar'
-      %section#content
+      %section.content
         - if flash[:notice]
           %div{ class: "alert " + flash[:type] }
             %button.close{"data-dismiss" => "alert", type: "button"} &times;

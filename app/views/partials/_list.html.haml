@@ -22,5 +22,6 @@
             = a.created_at
           %td
             = render partial: 'partials/actions', locals: { api: a }
+  = paginate @apis
 - else
   %h3{:style => "text-align: center;"} No APIs

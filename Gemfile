@@ -5,11 +5,18 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller" # Optional, only for the advanced features
+  gem 'annotate', ">=2.5.0"
+end
+
+gem 'json'
 gem 'sqlite3'
 gem "haml-rails"
-gem 'json'
 gem 'strong_parameters'
-gem 'annotate', ">=2.5.0"
+gem 'kaminari'
+gem 'kaminari-bootstrap'
 
 # Gems used only for assets and not required
 # in production environments by default.
