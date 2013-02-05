@@ -8,16 +8,17 @@ gem 'rails', '3.2.11'
 
 group :production do
   gem 'thin'
+  gem 'pg'
 end
 
 group :development do
   gem "better_errors"
   gem "binding_of_caller" # Optional, only for the advanced features
   gem 'annotate', ">=2.5.0"
+  gem 'sqlite3'
 end
 
 gem 'json'
-gem 'sqlite3'
 gem "haml-rails"
 gem 'strong_parameters'
 gem 'kaminari'
