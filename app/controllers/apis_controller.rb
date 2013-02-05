@@ -1,6 +1,6 @@
 class ApisController < ApplicationController
   def index
-    @apis = Api.order(:name).page(params[:page]).per(10)
+    @apis = Api.order(:created_at).page(params[:page]).per(10)
   end
 
   def new

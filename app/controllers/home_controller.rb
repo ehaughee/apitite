@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @apis = Api.all
+    @apis = Api.order(:created_at).page(params[:page]).per(10)
   end
 end

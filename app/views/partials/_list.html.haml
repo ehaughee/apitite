@@ -11,7 +11,8 @@
       - @apis.each do |a|
         %tr
           %td 
-            = a.name
+            %a{href: api_path(a)}
+              = a.name
           %td 
             %a{href: a.path}
               = a.path

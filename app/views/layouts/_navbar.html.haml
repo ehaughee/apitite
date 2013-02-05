@@ -4,9 +4,9 @@
   .navbar-inner
     %a.brand{href: root_url} APItite
     %ul.nav
-      %li{class: "active" if current_page?(controller: "home", action: "index")}
+      %li{class: ("active" if current_page?(controller: "home", action: "index"))}
         %a{href: root_url} Home
-      %li.dropdown{class: "active" if current_page?(controller: "apis", action: "index")}
+      %li.dropdown{class: ("active" if controller?("apis"))}
         %a.dropdown-toggle{"data-toggle" => "dropdown", href: apis_url}
           APIs
           %b.caret
