@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     if @user.save
       session[:flash] = "Successfully registered!"
       session[:type]  = "alert-success"
-      redirect_to root_url
+      redirect_to destination
     else
-      render "new"
+      render :new
     end
   end
 

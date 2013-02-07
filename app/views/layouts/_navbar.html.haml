@@ -5,7 +5,7 @@
       %li{class: ("active" if current_page?(controller: "home", action: "index"))}
         %a{href: root_url} Home
       %li.dropdown{class: ("active" if controller?("apis"))}
-        %a.dropdown-toggle{"data-toggle" => "dropdown", href: apis_url}
+        %a.dropdown-toggle{"data-toggle" => "dropdown"}
           APIs
           %b.caret
         %ul.dropdown-menu
@@ -13,3 +13,12 @@
             %a{href: apis_url} All APIs
           %li
             %a{href: new_api_url} New API
+    %ul.nav.pull-right
+      - if logged_in?
+        %li
+          %a{href: "/logout"} Log Out
+      - else
+        %li{ class: ("active" if controller?("sessions"))}
+          %a{href: "/login"} Log In
+        %li{ class: ("active" if controller?("users"))}
+          %a{href: "/signup"} Sign Up

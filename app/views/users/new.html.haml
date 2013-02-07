@@ -1,7 +1,7 @@
 .row
   .span4.well.center
     %legend Sign up
-    = form_for @user do |f|
+    = form_for @user, html: { class: "remove-margin" } do |f|
       - if @user.errors.any?
         .alert.alert-danger
           %ul
@@ -12,4 +12,4 @@
       = f.text_field :username, placeholder: "Username", class: "span4"
       = f.password_field :password, placeholder: "Password", class: "span4"
       = f.password_field :password_confirmation, placeholder: "Password Confirm", class: "span4"
-      = f.submit "Register", class: "btn btn-warning btn-block"
+      = f.submit "Register", class: "btn btn-large btn-warning btn-block"

@@ -3,6 +3,7 @@ APItite::Application.routes.draw do
 
   get "logout" => "sessions#destroy", as: "logout"
   get "login"  => "sessions#new", as: "login"
+  post "sessions" => "sessions#create"
 
   get "account" => "users#show"
   get "signup" => "users#new", as: "signup"

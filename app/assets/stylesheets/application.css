@@ -27,3 +27,7 @@
 	float: none;
 	margin: 0 auto;
 }
+
+.remove-margin {
+	margin: 0;
+}

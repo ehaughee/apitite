@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    session[:return_to] ||= root_url
   end
 
   def create
@@ -12,7 +13,7 @@ class SessionsController < ApplicationController
     else
       flash[:notice] = "Invalid username or password"
       flash[:type]  = "alert-danger"
-      render "new"
+      redirect_to "/login"
     end
   end
 
