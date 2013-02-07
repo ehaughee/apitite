@@ -21,3 +21,9 @@
 	padding-left: 10px;
 	padding-right: 10px;
 }
+
+.center {
+	display: block;
+	float: none;
+	margin: 0 auto;
+}

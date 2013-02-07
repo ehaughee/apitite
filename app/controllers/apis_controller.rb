@@ -10,7 +10,7 @@ class ApisController < ApplicationController
   def create
     Rails.logger.info "Creating API"
     api = Api.new api_params
-    if api.save
+    if api.save!
       flash[:notice] = "Successfully created an API"
       flash[:type]   = "alert-success"
       redirect_to api

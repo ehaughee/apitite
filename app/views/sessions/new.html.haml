@@ -1,0 +1,8 @@
+.row
+  .span4.well.center
+    %legend Please Sign In
+    = form_tag "sessions#new" do
+      = text_field_tag :username, params[:username], class: "span4", placeholder: "Username"
+      
+      = password_field_tag :password, params[:password], class: "span4", placeholder: "Password"
+      = submit_tag "Log in", class: "btn btn-info btn-block"

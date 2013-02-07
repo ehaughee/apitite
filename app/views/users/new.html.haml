@@ -1,0 +1,15 @@
+.row
+  .span4.well.center
+    %legend Sign up
+    = form_for @user do |f|
+      - if @user.errors.any?
+        .alert.alert-danger
+          %ul
+            - for message in @user.error.full_messages
+              %li
+                = message
+      
+      = f.text_field :username, placeholder: "Username", class: "span4"
+      = f.password_field :password, placeholder: "Password", class: "span4"
+      = f.password_field :password_confirmation, placeholder: "Password Confirm", class: "span4"
+      = f.submit "Register", class: "btn btn-warning btn-block"
