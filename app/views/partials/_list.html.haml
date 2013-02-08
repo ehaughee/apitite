@@ -22,7 +22,8 @@
           %td 
             = a.created_at
           %td
-            = render partial: 'partials/actions', locals: { api: a, current_user: current_user }
+            -if (can? :update, Api) or (can? :destroy, Api)
+              = render partial: 'partials/actions', locals: { api: a, current_user: current_user }
   = paginate @apis
 - else
   %h3{:style => "text-align: center;"} No APIs

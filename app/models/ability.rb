@@ -9,7 +9,7 @@ class Ability
     elsif user.admin?
       can :manage, :all
     else
-      can [:update, :destroy], Api, user_id: user.id
+      can [:update, :destroy, :read], Api, user_id: user.id
       can :create, Api
     end
 
