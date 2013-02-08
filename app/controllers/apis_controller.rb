@@ -11,12 +11,9 @@ class ApisController < ApplicationController
     Rails.logger.info "Creating API"
     api = Api.new api_params
     if api.save!
-      flash[:notice] = "Successfully created an API"
-      flash[:type]   = "alert-success"
-      redirect_to api
+      redirect_to api, notice: "Successfully created an API"
     else
-      flash[:notice] = "Error adding API"
-      flash[:type]   = "alert-error"
+      flash.now.alert = "Error adding API"
       render "new"
     end
   end
@@ -34,11 +31,9 @@ class ApisController < ApplicationController
     if params[:id] && @api = Api.find_by_id(params[:id])
       api = Api.find_by_id(params[:id])
       if api.update_attributes!(api_params)
-        flash[:notice] = "Successfully updated API"
-        flash[:type]   = "alert-success"
+        flash.notice = "Successfully updated API"
       else
-        flash[:notice] = "Error updating API"
-        flash[:type]   = "alert-error"
+        flash.alert = "Error updating API"
       end
 
       redirect_to api
@@ -61,13 +56,9 @@ class ApisController < ApplicationController
     Rails.logger.info "Deleting API"
     if params[:id] && @api = Api.find_by_id(params[:id])
       if @api.destroy
-        flash[:notice] = "Successfully deleted API"
-        flash[:type]   = "alert-success"
-        redirect_to apis_url
+        redirect_to apis_url, notice: "Successfully deleted API"
       else
-        flash[:notice] = "Error deleting API"
-        flash[:type]   = "alert-error"
-        redirect_to @api
+        redirect_to @api, "Error deleting API"
       end
     else
       redirect_to "/404.html"
