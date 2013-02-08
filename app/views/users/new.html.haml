@@ -4,8 +4,9 @@
     = form_for @user, html: { class: "remove-margin" } do |f|
       - if @user.errors.any?
         .alert.alert-danger
+          %strong Error
           %ul
-            - for message in @user.error.full_messages
+            - for message in @user.errors.full_messages
               %li
                 = message
       

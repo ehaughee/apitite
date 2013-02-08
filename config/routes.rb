@@ -13,14 +13,13 @@ APItite::Application.routes.draw do
 end
 
 #== Route Map
-# Generated on 06 Feb 2013 13:50
+# Generated on 08 Feb 2013 11:02
 #
 #    logout GET    /logout(.:format)         sessions#destroy
 #     login GET    /login(.:format)          sessions#new
-
+#  sessions POST   /sessions(.:format)       sessions#create
 #   account GET    /account(.:format)        users#show
 #    signup GET    /signup(.:format)         users#new
-
 #      apis GET    /apis(.:format)           apis#index
 #           POST   /apis(.:format)           apis#create
 #   new_api GET    /apis/new(.:format)       apis#new
@@ -28,7 +27,6 @@ end
 #       api GET    /apis/:id(.:format)       apis#show
 #           PUT    /apis/:id(.:format)       apis#update
 #           DELETE /apis/:id(.:format)       apis#destroy
-
 #     users GET    /users(.:format)          users#index
 #           POST   /users(.:format)          users#create
 #  new_user GET    /users/new(.:format)      users#new

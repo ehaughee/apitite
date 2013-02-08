@@ -1,4 +1,6 @@
 class ApisController < ApplicationController
+  load_and_authorize_resource
+  
   def index
     @apis = Api.order(:created_at).page(params[:page]).per(10)
   end
@@ -9,7 +11,7 @@ class ApisController < ApplicationController
 
   def create
     Rails.logger.info "Creating API"
-    api = Api.new api_params
+    api = Api.new api_params + { user_id: current_user.id }
     if api.save!
       redirect_to api, notice: "Successfully created an API"
     else

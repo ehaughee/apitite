@@ -14,10 +14,4 @@ module ApplicationHelper
   def logged_in?
     !!current_user
   end
-
-  def destination
-    url = session[:return_to] || root_url
-    session[:return_to] = nil
-    url
-  end
 end

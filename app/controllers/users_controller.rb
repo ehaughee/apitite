@@ -6,8 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:flash] = "Successfully registered!"
-      session[:type]  = "alert-success"
+      session[:user_id] = @user.id
+      flash.notice = "Successfully registered"
       redirect_to destination
     else
       render :new

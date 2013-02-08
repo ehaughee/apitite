@@ -11,8 +11,9 @@
         %ul.dropdown-menu
           %li
             %a{href: apis_url} All APIs
-          %li
-            %a{href: new_api_url} New API
+          - if can? :create, @api
+            %li
+              %a{href: new_api_url} New API
     %ul.nav.pull-right
       - if logged_in?
         %li

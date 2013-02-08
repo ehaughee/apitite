@@ -1,4 +1,6 @@
 .btn-group
-  %a.btn.btn-small{ href: edit_api_path(api), title: "Edit API" }
-    %i.icon-edit
-  = link_to raw("<i class='icon-remove icon-white'></i>"), api_path(api), method: :delete, class: "btn btn-small btn-danger", title: "Delete API"
+  - if can? :update, api
+    %a.btn.btn-small{ href: edit_api_path(api), title: "Edit API" }
+      %i.icon-edit
+  - if can? :destroy, api
+    = link_to raw("<i class='icon-remove icon-white'></i>"), api_path(api), method: :delete, class: "btn btn-small btn-danger", title: "Delete API"

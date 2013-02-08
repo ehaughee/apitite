@@ -8,9 +8,11 @@
 #  docs       :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 class Api < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
-  # attr_accessible :title, :body
+
+  belongs_to :user
 end
