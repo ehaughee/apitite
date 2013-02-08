@@ -9,8 +9,8 @@ class Ability
     elsif user.admin?
       can :manage, :all
     else
+      can [:update, :destroy], Api, user_id: user.id
       can :create, Api
-      can :manage, Api, user_id: user.id
     end
 
     # Define abilities for the passed in user here. For example:

@@ -11,7 +11,7 @@
         %ul.dropdown-menu
           %li
             %a{href: apis_url} All APIs
-          - if can? :create, @api
+          - if can? :create, Api
             %li
               %a{href: new_api_url} New API
     %ul.nav.pull-right
