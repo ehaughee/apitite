@@ -2,7 +2,7 @@ class ApisController < ApplicationController
   load_and_authorize_resource except: :create
   
   def index
-    @apis = Api.reverse_order(:created_at).page(params[:page]).per(10)
+    @apis = Api.order("created_at DESC").page(params[:page]).per(10)
   end
 
   def new
