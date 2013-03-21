@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     actionmailer (3.2.11)
       actionpack (= 3.2.11)
@@ -36,8 +36,6 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.7.0)
     binding_of_caller (0.6.8)
-    bootstrap-sass (2.2.2.0)
-      sass (~> 3.2)
     builder (3.0.4)
     cancan (1.6.9)
     coderay (1.0.8)
@@ -53,6 +51,7 @@ GEM
     eventmachine (1.0.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    flat-ui-rails (0.0.2)
     haml (3.1.7)
     haml-rails (0.3.5)
       actionpack (>= 3.1, < 4.1)
@@ -142,9 +141,9 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   better_errors
   binding_of_caller
-  bootstrap-sass (~> 2.2.2.0)
   cancan
   coffee-rails (~> 3.2.1)
+  flat-ui-rails
   haml-rails
   jquery-rails
   json
